@@ -1,0 +1,65 @@
+{
+  "rezept" : "Spaghetti Bolognese",
+  "zubereitungszeit" : {
+    "dauer" : 30,
+    "zeiteinheit" : "Minuten"
+  },
+  "schwierigkeitsgrad" : "Moderat",
+  "portionen" : 4,
+  "kcal" : 399,
+  "zutaten" : [ {
+    "name" : "Zwiebel",
+    "einheit" : "Stück",
+    "anzahl" : 1.0
+  }, {
+    "name" : "Koblauch",
+    "einheit" : "Teelöffel",
+    "anzahl" : 2.0
+  }, {
+    "name" : "Karotte",
+    "einheit" : "Esslöffel",
+    "anzahl" : 1.0
+  }, {
+    "name" : "Petersilie",
+    "einheit" : "Prise",
+    "anzahl" : 1.0
+  }, {
+    "name" : "Olivenöl für den Topf",
+    "einheit" : "Messerspitze",
+    "anzahl" : 1.0
+  }, {
+    "name" : "Faschiertes (Rindfleisch)",
+    "einheit" : "Gramm",
+    "anzahl" : 350.0
+  }, {
+    "name" : "Tomatensauce",
+    "einheit" : "Milliliter",
+    "anzahl" : 400.0
+  }, {
+    "name" : "Spaghetti",
+    "einheit" : "Liter",
+    "anzahl" : 370.0
+  }, {
+    "name" : "Oregano",
+    "einheit" : "Kilogramm",
+    "anzahl" : 2.0
+  }, {
+    "name" : "Rotwein",
+    "einheit" : "Packung",
+    "anzahl" : 2.0
+  }, {
+    "name" : "Tomatenmark",
+    "einheit" : "Becher",
+    "anzahl" : 2.0
+  }, {
+    "name" : "Salz",
+    "einheit" : "Flasche",
+    "anzahl" : 1.0
+  }, {
+    "name" : "Pfeffer",
+    "einheit" : "Glas",
+    "anzahl" : 1.0
+  } ],
+  "zubereitung" : "Die Zwiebel schälen und in kleine Würfel schneiden. Den Knoblauch schälen und in kleine Stücke hacken. Die Karotten waschen, schälen, die harten Enden vom Stiel schneiden, den Rest sehr klein schneiden oder raspeln. Die Petersilie waschen, trocken schütteln und fein hacken.\nDanach reichlich Salzwasser aufkochen und die Nudeln darin bissfest kochen (=al dente) und anschließend durch ein Sieb abgießen.\nIn der Zwischenzeit das Öl in einem Topf erhitzen und darin Knoblauch sowie Zwiebel 4 Minuten dünsten. Die Karotten hinzufügen und weitere 2 Minuten mitdünsten.\nNun das Faschierte beimengen und kurz durchbraten. Tomatensauce, Oregano und Rotwein hinzufügen und die Flüssigkeit etwas reduzieren lassen. Den Deckel auf den Topf geben und bei kleiner Hitze gut 40-50 Minuten köcheln lassen.\nZum Schluss das Tomatenmark unterrühren und die Sauce mit Salz, Pfeffer und der Petersilie abschmecken.\nDie gekochten Spagetti appetitlich auf Tellern anrichten, die Sauce darüber geben und mit ein paar frischen Basilikumblättern garnieren.",
+  "bild" : "C:\\Users\\Johannes\\Documents\\DHBW-Informatik Bachelor\\Programmentwurf (5u6 Semester)\\BasisProgrammentwurf\\src\\main\\resources\\Gerichte\\Bilder\\spaghettiBolonese.jpg"
+}

@@ -1,0 +1,44 @@
+{
+  "rezept": "Türkischer Obatzter",
+  "zubereitungszeit": {
+    "dauer": 10,
+    "zeiteinheit": "Minuten"
+  },
+  "schwierigkeitsgrad": "Einfach",
+  "portionen": 6,
+  "kcal": 159,
+  "zutaten": [
+    {
+      "name": "Petersilie, abgezupft",
+      "einheit": "Bund",
+      "anzahl": 0.5
+    },
+    {
+      "name": "Feta, in Stücken",
+      "einheit": "Gramm",
+      "anzahl": 100
+    },
+    {
+      "name": "Knoblauch",
+      "einheit": "Zehen",
+      "anzahl": 1
+    },
+    {
+      "name": "Ajvar",
+      "einheit": "Gramm",
+      "anzahl": 50
+    },
+    {
+      "name": "Salz",
+      "einheit": "Teelöffel",
+      "anzahl": 0.25
+    },
+    {
+      "name": "Frischkäse",
+      "einheit": "Gramm",
+      "anzahl": 200
+    }
+  ],
+  "zubereitung": "Knoblauch und Petersilie in den Mixtopf geben und 3 Sek./Stufe 8 zerkleinern. Feta zugeben und 5 Sek./Stufe 4 zerkleinern. Ajvar, Salz und Frischkäse zugeben, 10 Sek./Stufe 3 unterrühren und als Brotaufstrich oder Dip servieren.",
+  "bild": "Gerichte/Bilder/tuerkischerObatzter.png"
+}

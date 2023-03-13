@@ -1,0 +1,44 @@
+{
+  "rezept": "Erdäpfelpürree",
+  "zubereitungszeit": {
+    "dauer": 40,
+    "zeiteinheit": "Minuten"
+  },
+  "schwierigkeitsgrad": "Moderat",
+  "portionen": 6,
+  "kcal": 164,
+  "zutaten": [
+    {
+      "name": "Wasser",
+      "einheit": "Gramm",
+      "anzahl": 700
+    },
+    {
+      "name": "Salz",
+      "einheit": "Teelöffel",
+      "anzahl": 2
+    },
+    {
+      "name": "Erdäpfel",
+      "einheit": "Gramm",
+      "anzahl": 800
+    },
+    {
+      "name": "Milch",
+      "einheit": "Gramm",
+      "anzahl": 250
+    },
+    {
+      "name": "Butter",
+      "einheit": "Gramm",
+      "anzahl": 30
+    },
+    {
+      "name": "Muskat, gemahlen",
+      "einheit": "Teelöffel",
+      "anzahl": 0.25 
+    }
+  ],
+  "zubereitung": "Wasser und 1 TL Salz in den Mixtopf geben. Gareinsatz einhängen, Erdäpfel einwiegen und 25 Min./Varoma/Stufe 1 garen. Gareinsatz mithilfe des Spatels herausnehmen, Erdäpfel umfüllen und Mixtopf leeren. Milch in den Mixtopf geben und 3 Min./100°C/Stufe 1 erwärmen. Rühraufsatz einsetzen. Gegarte Erdäpfel, Butter, 1 TL Salz und Muskat zugeben und 20-30 Sek./Stufe 3 bis zur gewünschten Konsistenz pürieren. Rühraufsatz entfernen. Erdäpfelpüree anrichten und sofort servieren.",
+  "bild": "Gerichte/Bilder/erdapfelpueree.png"
+}
