@@ -43,9 +43,9 @@ class FelderPanel:JPanel(), ActionListener {
             val anzahlTextField = JFormattedTextField(doubleFormat)
             anzahlTextField.value = 1.0 // Setzt den Anfangswert
 
-            feldPanel.add(nameTextField)
-            feldPanel.add(einheitComboBox)
             feldPanel.add(anzahlTextField)
+            feldPanel.add(einheitComboBox)
+            feldPanel.add(nameTextField)
 
             // JButton, um dieses Feld zu entfernen
             val entfernenButton = JButton("Zutat entfernen")
@@ -113,7 +113,6 @@ class FelderPanel:JPanel(), ActionListener {
             nameTextField.text = zutat.getName()
             val einheitComboBox: JComboBox<Einheit> = JComboBox(Einheit.values())
             einheitComboBox.selectedItem = zutat.getEinheit()
-            //val anzahlTextField = JTextField("1", 1)
 
             val doubleFormat = NumberFormat.getNumberInstance()
             doubleFormat.isParseIntegerOnly = false

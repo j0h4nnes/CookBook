@@ -29,9 +29,9 @@ class ZutatenFenster : JFrame {
         // JPanel für Bezeichnungen (Name, Einheit, Anzahl)
         pnlBezeichnungen.layout = GridLayout(1, 4)
 
-        pnlBezeichnungen.add(lbName)
         pnlBezeichnungen.add(lbAnzahl)
         pnlBezeichnungen.add(lbEinheit)
+        pnlBezeichnungen.add(lbName)
         pnlBezeichnungen.add(lbEmpty)
 
         panel.add(pnlBezeichnungen)
@@ -57,7 +57,7 @@ class ZutatenFenster : JFrame {
             }
 
             for(index in 0 until felder){
-                val zutat = Zutat(namen[index],einheiten[index],anzahlen[index])
+                val zutat = Zutat(namen[index], einheiten[index], anzahlen[index])
                 zutaten.add(zutat)
             }
 
