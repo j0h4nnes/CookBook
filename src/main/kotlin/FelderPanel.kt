@@ -72,7 +72,7 @@ class FelderPanel:JPanel(), ActionListener {
         val felder = felderPanel.components
         for (i in 0 until felderAnzahl) {
             val feldPanel = felder[i] as JPanel
-            val nameTextField = feldPanel.getComponent(0) as JTextField
+            val nameTextField = feldPanel.getComponent(2) as JTextField
             namen.add(nameTextField.text)
         }
         return namen
@@ -95,7 +95,7 @@ class FelderPanel:JPanel(), ActionListener {
         (223).toDouble()
         for (i in 0 until felderAnzahl) {
             val feldPanel = felder[i] as JPanel
-            val anzahlTextField = feldPanel.getComponent(2) as JFormattedTextField
+            val anzahlTextField = feldPanel.getComponent(0) as JFormattedTextField
             anzahlen[i] = anzahlTextField.value.toString().toDouble()
         }
         return anzahlen
@@ -119,9 +119,9 @@ class FelderPanel:JPanel(), ActionListener {
             val anzahlTextField = JFormattedTextField(doubleFormat)
             anzahlTextField.value = zutat.getAnzahl()
 
-            feldPanel.add(nameTextField)
-            feldPanel.add(einheitComboBox)
             feldPanel.add(anzahlTextField)
+            feldPanel.add(einheitComboBox)
+            feldPanel.add(nameTextField)
 
             // JButton, um dieses Feld zu entfernen
             val entfernenButton = JButton("Zutat entfernen")
