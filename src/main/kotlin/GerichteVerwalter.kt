@@ -20,10 +20,6 @@ class GerichteVerwalter {
     }
 
     fun holeAlle(): List<Gericht> {
-        val alleGerichte: MutableList<Gericht> = ArrayList()
-        for (entitaet in verwalter.holeAlle()) {
-            alleGerichte.add(entitaet)
-        }
-        return alleGerichte
+        return verwalter.holeAlle()
     }
 }

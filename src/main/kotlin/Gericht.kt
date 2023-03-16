@@ -9,9 +9,9 @@ class Gericht : Entity {
     val kcal: Int
     val zutaten: List<Zutat>
     val zubereitung: String
-    val bild: String
+    val bildPfad: String
 
-    constructor(id:Int, rezept:String, zubereitungszeit: Zubereitungszeit, schwierigkeitsgrad:Schwierigkeitsgrad, portionen:Int, kcal:Int, zutaten:List<Zutat>, zubereitung:String, bild: String):super(id){
+    constructor(id:Int, rezept:String, zubereitungszeit: Zubereitungszeit, schwierigkeitsgrad:Schwierigkeitsgrad, portionen:Int, kcal:Int, zutaten:List<Zutat>, zubereitung:String, bildPfad: String):super(id){
         this.rezept = rezept
         this.zubereitungszeit = zubereitungszeit
         this.schwierigkeitsgrad = schwierigkeitsgrad
@@ -19,11 +19,11 @@ class Gericht : Entity {
         this.kcal = kcal
         this.zutaten = zutaten
         this.zubereitung = zubereitung
-        this.bild = bild
+        this.bildPfad = bildPfad
     }
 
     constructor(rezept:String, zubereitungszeit: Zubereitungszeit, schwierigkeitsgrad:Schwierigkeitsgrad, portionen:Int, kcal:Int,
-                zutaten:List<Zutat>, zubereitung:String, bild: String):super(){
+                zutaten:List<Zutat>, zubereitung:String, bildPfad: String):super(){
         this.rezept = rezept
         this.zubereitungszeit = zubereitungszeit
         this.schwierigkeitsgrad = schwierigkeitsgrad
@@ -31,7 +31,7 @@ class Gericht : Entity {
         this.kcal = kcal
         this.zutaten = zutaten
         this.zubereitung = zubereitung
-        this.bild = bild
+        this.bildPfad = bildPfad
     }
 
     constructor():super(){
@@ -42,7 +42,7 @@ class Gericht : Entity {
         this.kcal = 0
         this.zutaten = emptyList()
         this.zubereitung = ""
-        this.bild = "noPicture.png"
+        this.bildPfad = "noPicture.png"
     }
 
     override fun toString(): String {

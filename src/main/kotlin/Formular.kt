@@ -220,7 +220,7 @@ class Formular : JFrame {
         this.tfKcal.text = gericht.kcal.toString()
         this.lsZutaten = gericht.zutaten
         this.taZubereitung.text = gericht.zubereitung
-        this.bildPath = gericht.bild
+        this.bildPath = gericht.bildPfad
 
         this.repaint()
     }

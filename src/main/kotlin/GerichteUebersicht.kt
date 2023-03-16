@@ -51,11 +51,11 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
                 if(selectedElement != null) {
                     // Bild im Label verankern
                     try {
-                        val picFile = File(selectedElement.bild)
+                        val picFile = File(selectedElement.bildPfad)
                         if(picFile.isAbsolute){
                             imgLogo = ImageIO.read(picFile)
                         }else{
-                            imgLogo = ImageIO.read(javaClass.classLoader.getResource(selectedElement.bild))
+                            imgLogo = ImageIO.read(javaClass.classLoader.getResource(selectedElement.bildPfad))
                         }
                         imgLogo = imgLogo.getScaledInstance(300, 180, Image.SCALE_SMOOTH)
                         lbBild.icon = ImageIcon(imgLogo)
@@ -261,8 +261,9 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
             val optionType = JOptionPane.YES_NO_OPTION
             val messageType = JOptionPane.WARNING_MESSAGE
             val options = arrayOf("Ja", "Nein")
-
-            val result = JOptionPane.showOptionDialog(null, message, title, optionType, messageType, null, options, options[0])
+            val result = JOptionPane.showOptionDialog(
+                null, message, title, optionType, messageType, null, options, options[1]
+            )
             if (result == JOptionPane.YES_OPTION) {
                 gerichteRegler.loescheGericht(selectedGericht.id)
                 gerichteRegler.benachrichtige()
