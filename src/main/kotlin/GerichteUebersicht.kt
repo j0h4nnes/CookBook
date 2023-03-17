@@ -31,8 +31,8 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
     private val listZutaten = JList(listModel)
     private val lbZubereitung = JTextArea()
 
-    private val btDelete = JButton("Rezept löschen")
-    private val btUpdate = JButton("Rezept bearbeiten")
+    private val btLoesche = JButton("Rezept löschen")
+    private val btAktualisieren = JButton("Rezept bearbeiten")
     private val btNeu = JButton("Neues Rezept hinzufügen")
 
     private lateinit var imgLogo: Image
@@ -247,16 +247,16 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
             this.dispose()
         }
 
-        btUpdate.addActionListener {
+        btAktualisieren.addActionListener {
             val selectedGericht = elementList.selectedValue
             val gerichtFormular = Formular(this.gerichteRegler)
             gerichtFormular.fillFormular(selectedGericht)
             this.dispose()
         }
 
-        btDelete.addActionListener {
-            val selectedGericht = elementList.selectedValue
-            val message = "Wollen Sie das Gericht: ${selectedGericht.rezept} löschen?"
+        btLoesche.addActionListener {
+            val gewähltesGericht = elementList.selectedValue
+            val message = "Wollen Sie das Gericht: ${gewähltesGericht.rezept} löschen?"
             val title = "Warning"
             val optionType = JOptionPane.YES_NO_OPTION
             val messageType = JOptionPane.WARNING_MESSAGE
@@ -265,14 +265,14 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
                 null, message, title, optionType, messageType, null, options, options[1]
             )
             if (result == JOptionPane.YES_OPTION) {
-                gerichteRegler.loescheGericht(selectedGericht.id)
+                gerichteRegler.loescheGericht(gewähltesGericht.id)
                 gerichteRegler.benachrichtige()
             }
         }
 
         pnUD.add(btNeu)
-        pnUD.add(btUpdate)
-        pnUD.add(btDelete)
+        pnUD.add(btAktualisieren)
+        pnUD.add(btLoesche)
         panel.add(pnUD, BorderLayout.SOUTH)
 
         this.layout = BorderLayout()

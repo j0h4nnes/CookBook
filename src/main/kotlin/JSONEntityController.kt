@@ -42,11 +42,11 @@ class JSONEntityController :EntityController {
     override fun loesche(id: Int): Boolean {
         try{
             val gericht = listeMitAllenGerichten.first { it.id == id }
-            val file = Files.list(Paths.get(dir.toURI()))
+            val gerichtJSON = Files.list(Paths.get(dir.toURI()))
                 .filter { it.fileName.toString().contains(gericht.rezept, ignoreCase = true) }
                 .findFirst()
                 .orElse(null)
-            file.deleteIfExists()
+            gerichtJSON.deleteIfExists()
         }catch (ex:Exception){
             return false
         }
