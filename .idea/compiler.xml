@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BasisProgrammentwurf" />
+        <module name="cookbook.plugin" />
+        <module name="cookbook.adapter" />
+        <module name="cookbook.kern" />
+        <module name="CookBook" />
+        <module name="cookbook.applikation" />
+        <module name="cookbook.start" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BasisProgrammentwurf" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

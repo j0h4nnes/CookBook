@@ -1,0 +1,49 @@
+{
+  "rezept": "Spaghetti Carbonara",
+  "zubereitungszeit": {
+    "dauer": 47,
+    "zeiteinheit": "Minuten"
+  },
+  "schwierigkeitsgrad": "Anspruchsvoll",
+  "portionen": 4,
+  "kcal": 582,
+  "zutaten": [
+    {
+      "name": "Spaghetti",
+      "einheit": "Gramm",
+      "anzahl": 400
+    },
+    {
+      "name": "Schinken, roher",
+      "einheit": "Gramm",
+      "anzahl": 200
+    },
+    {
+      "name": "Eigelb",
+      "einheit": "Stück",
+      "anzahl": 4
+    },
+    {
+      "name": "Butter",
+      "einheit": "Gramm",
+      "anzahl": 50
+    },
+    {
+      "name": "Salz",
+      "einheit": "Teelöffel",
+      "anzahl": 1
+    },
+    {
+      "name": "Muskat",
+      "einheit": "Prise",
+      "anzahl": 1
+    },
+    {
+      "name": "Parmesan, frisch geriebener",
+      "einheit": "Gramm",
+      "anzahl": 50 
+    }
+  ],
+  "zubereitung": "Die Pasta in reichlich Salzwasser bissfest kochen. Den Schinken in Würfel schneiden und in wenig Butter anbraten.Eigelb in einer großen Schüssel mit Salz, Pfeffer und Muskat verquirlen. Die Butter schaumig rühren und gut unter das Eigelb mischen. Die Schinkenwürfel und den geriebenen Käse gründlich unterrühren. Wenn die Nudeln gar sind, abgießen, sofort zu der Mischung in die Schüssel geben, nochmal alles gründlich durchmischen, dann sogleich servieren.",
+  "bildPfad": "Gerichte/Bilder/spaghettiCarbonara.png"
+}
