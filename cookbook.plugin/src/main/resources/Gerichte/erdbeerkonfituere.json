@@ -1,0 +1,34 @@
+{
+  "rezept": "Erdbeerkonfitüre",
+  "zubereitungszeit": {
+    "dauer": 30,
+    "zeiteinheit": "Minuten"
+  },
+  "schwierigkeitsgrad": "Einfach",
+  "portionen": 3,
+  "kcal": 810,
+  "zutaten": [
+    {
+      "name": "Erdbeeren, frisch",
+      "einheit": "Gramm",
+      "anzahl": 1000
+    },
+    {
+      "name": "Gelierzucker",
+      "einheit": "Gramm",
+      "anzahl": 500
+    },
+    {
+      "name": "Zitronensäure",
+      "einheit": "Packung",
+      "anzahl": 1
+    },
+    {
+      "name": "Pflanzenfett",
+      "einheit": "Gramm",
+      "anzahl": 5
+    }
+  ],
+  "zubereitung": "Erdbeeren, Gelierzucker, Zitronensäure und Pflanzenfett in den Mixtopf geben, 12 Sek./Stufe 5 zerkleinern, anstelle des Messbechers Varoma-Behälter ohne Deckel als Spritzschutz auf den Mixtopfdeckel stellen, 18 Min./100°C/Stufe 2 kochen und Gelierprobe machen. Konfitüre in 3 heiß ausgespülte Schraubgläser geben, sofort verschließen, abkühlen lassen und bis zum Servieren kühl und trocken aufbewahren.",
+  "bildPfad": "Gerichte/Bilder/erdbeerkonfituere.png"
+}

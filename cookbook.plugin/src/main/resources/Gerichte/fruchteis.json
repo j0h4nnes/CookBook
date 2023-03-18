@@ -1,0 +1,29 @@
+{
+  "rezept": "Fruchteis",
+  "zubereitungszeit": {
+    "dauer": 5,
+    "zeiteinheit": "Minuten"
+  },
+  "schwierigkeitsgrad": "Einfach",
+  "portionen": 4,
+  "kcal": 165,
+  "zutaten": [
+    {
+      "name": "Fruchtmischung",
+      "einheit": "Gramm",
+      "anzahl": 300
+    },
+    {
+      "name": "Zucker",
+      "einheit": "Gramm",
+      "anzahl": 60
+    },
+    {
+      "name": "Sahne",
+      "einheit": "Gramm",
+      "anzahl": 100
+    }
+  ],
+  "zubereitung": "Zucker in den Mixtopf geben und 10 Sek./Stufe 10 pulverisieren. Gefrorenes Obst zugeben, 10 Sek./Stufe 8 zerkleinern und mit dem Spatel nach unten schieben. Sahne zugeben, 30 Sek./Stufe 4 zu einem cremigen Fruchteis verrühren und sofort servieren.",
+  "bildPfad": "Gerichte/Bilder/fruchteis.png"
+}

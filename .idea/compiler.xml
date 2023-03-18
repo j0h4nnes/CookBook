@@ -9,10 +9,12 @@
         <module name="cookbook.plugin" />
         <module name="cookbook.adapter" />
         <module name="cookbook.kern" />
-        <module name="CookBook" />
         <module name="cookbook.applikation" />
         <module name="cookbook.start" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CookBook" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

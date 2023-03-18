@@ -1,0 +1,39 @@
+{
+  "rezept": "Grießpudding",
+  "zubereitungszeit": {
+    "dauer": 15,
+    "zeiteinheit": "Minuten"
+  },
+  "schwierigkeitsgrad": "Einfach",
+  "portionen": 4,
+  "kcal": 176,
+  "zutaten": [
+    {
+      "name": "Milch",
+      "einheit": "Gramm",
+      "anzahl": 500
+    },
+    {
+      "name": "Zucker",
+      "einheit": "Gramm",
+      "anzahl": 30
+    },
+    {
+      "name": "Vanillezucker, selbst gemacht",
+      "einheit": "Esslöffel",
+      "anzahl": 1
+    },
+    {
+      "name": "Salz",
+      "einheit": "Prise",
+      "anzahl": 1
+    },
+    {
+      "name": "Weichweizengrieß",
+      "einheit": "Gramm",
+      "anzahl": 60
+    }
+  ],
+  "zubereitung": "Milch, Zucker, Vanillezucker, Salz und Grieß in den Mixtopf geben, 3 Sek./Stufe 4 verrühren und 8 Min./100°C/Stufe 2 aufkochen. Grießpudding in Portionsschälchen füllen und warm oder kalt servieren.",
+  "bildPfad": "Gerichte/Bilder/griesspudding.png"
+}
