@@ -1,0 +1,11 @@
+bin/
+.classpath
+.settings
+.project
+target/
+cookbook.adapter/target
+cookbook.kern/target
+cookbook.applikation/target
+cookbook.plugin/target
+cookbook.start/target
+
