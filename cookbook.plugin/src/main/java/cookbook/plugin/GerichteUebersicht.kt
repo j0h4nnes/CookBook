@@ -261,8 +261,8 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
         }
 
         btLoesche.addActionListener {
-            val gewähltesGericht = elementList.selectedValue
-            val message = "Wollen Sie das Gericht: ${gewähltesGericht.rezept} löschen?"
+            val ausgewaehltesGericht = elementList.selectedValue
+            val message = "Wollen Sie das Gericht: ${ausgewaehltesGericht.rezept} löschen?"
             val title = "Warning"
             val optionType = JOptionPane.YES_NO_OPTION
             val messageType = JOptionPane.WARNING_MESSAGE
@@ -271,7 +271,7 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
                 null, message, title, optionType, messageType, null, options, options[1]
             )
             if (result == JOptionPane.YES_OPTION) {
-                gerichteRegler.loescheGericht(gewähltesGericht.id)
+                gerichteRegler.loescheGericht(ausgewaehltesGericht.id)
                 gerichteRegler.benachrichtige()
             }
         }
