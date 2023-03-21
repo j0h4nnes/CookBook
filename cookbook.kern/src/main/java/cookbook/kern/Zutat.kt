@@ -1,9 +1,9 @@
 package cookbook.kern
 
-class Zutat {
-    private var name: String = ""
-    private var einheit: Einheit
-    private var anzahl = 0.0
+final class Zutat {
+    private val name: String
+    private val einheit: Einheit
+    private val anzahl: Double
 
     constructor() : this("", Einheit.Gramm, 0.0)
     constructor(name: String, anzahl: Double) {
@@ -22,23 +22,19 @@ class Zutat {
         return name
     }
 
-    fun setName(name: String) {
-        this.name = name
-    }
-
     fun getAnzahl(): Double {
         return anzahl
-    }
-
-    fun setAnzahl(anzahl: Double) {
-        this.anzahl = anzahl
     }
 
     fun getEinheit(): Einheit {
         return einheit
     }
 
-    fun setEinheit(einheit: Einheit) {
-        this.einheit = einheit
+    override fun hashCode(): Int {
+        return super.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
     }
 }
