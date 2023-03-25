@@ -70,7 +70,7 @@ class ZutatenFenster : JFrame {
         panel.add(eingabenButton)
 
         contentPane.add(panel)
-        setSize(500,500)
+        setSize(600,500)
         isVisible = true
     }
 
