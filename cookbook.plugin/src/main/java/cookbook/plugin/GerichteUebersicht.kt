@@ -141,8 +141,7 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
             val searchText = tfSearch
             val fltGerichte = gerichteRegler.holeAlle()!!.filter { it.rezept.contains(searchText.text, ignoreCase = true) }
 
-            elementList.setListData(fltGerichte.toTypedArray())
-            elementList.repaint()
+            aktualisiereElementListe(fltGerichte)
         }
 
         pnFilterSWG.add(lbFilterSWG)
@@ -167,8 +166,7 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
             if(tfFilterKcal.text.isNotEmpty()) {
                 fltGerichte = fltGerichte.filter { it.kcal <= tfFilterKcal.text.toInt() }
             }
-            elementList.setListData(fltGerichte.toTypedArray())
-            elementList.repaint()
+            aktualisiereElementListe(fltGerichte)
         }
 
         pnFilterKcal.add(lbFilterKcal)
@@ -290,7 +288,11 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
 
     override fun aktualisiere(o: Any?) {
         val alleGerichte = this.gerichteRegler.holeAlle() as ArrayList<Gericht>
-        elementList.setListData(alleGerichte.toTypedArray())
+        aktualisiereElementListe(alleGerichte)
+    }
+
+    private fun aktualisiereElementListe(gerichtList: List<Gericht>){
+        elementList.setListData(gerichtList.toTypedArray())
         elementList.repaint()
     }
 }
