@@ -21,6 +21,10 @@ class GerichteVerwalter {
         return verwalter.erstelle(gericht)
     }
 
+    fun hole(id: Int): Gericht{
+        return verwalter.hole(id)
+    }
+
     fun holeAlle(): List<Gericht> {
         return verwalter.holeAlle()
     }

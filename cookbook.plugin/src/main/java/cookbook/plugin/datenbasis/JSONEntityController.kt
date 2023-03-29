@@ -54,10 +54,13 @@ class JSONEntityController : EntityController {
         }catch (ex:Exception){
             return false
         }
-        return false
+        return true
     }
 
     override fun aendere(gericht: Gericht, id: Int): Gericht {
+        loesche(id)
+        gericht.id = id
+        erstelle(gericht)
         return gericht
     }
 

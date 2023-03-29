@@ -27,6 +27,10 @@ class GerichtRegler : Subjekt {
         return this.verwaltung?.loescheGericht(id)
     }
 
+    fun hole(id: Int): Gericht?{
+        return this.verwaltung?.hole(id)
+    }
+
     fun holeAlle(): List<Gericht>? {
         return this.verwaltung?.holeAlle()
     }
