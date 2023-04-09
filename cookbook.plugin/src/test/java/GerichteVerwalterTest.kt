@@ -4,12 +4,11 @@ import cookbook.kern.*
 
 import org.easymock.EasyMock
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.BeforeEach
 
 import java.util.*
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class GerichteVerwalterTest {
 
@@ -38,19 +37,13 @@ class GerichteVerwalterTest {
         alleGerichte.add(gerichtN3)
     }
 
-    //Test:
-    // hole() - Erfolgreich/Misserfolgreich
-    // holeAlle() - Erfolgreich/Misserfolgreich
-    // erstelle() - Erfolgreich/Misserfolgreich
-    // loesche() - Erfolgreich/Misserfolgreich
-
 
     @Test
     fun holeGericht(){
         EasyMock.expect(verwalter.hole(1)).andReturn(gerichtN1)
         EasyMock.replay(verwalter)
 
-        val geholtesGericht = this.verwalter.hole(1)
+        val geholtesGericht = this.gerichteVerwalter.hole(1)
         Assertions.assertEquals(geholtesGericht.id, gerichtN1.id)
         Assertions.assertEquals(geholtesGericht.rezept, gerichtN1.rezept)
         Assertions.assertEquals(geholtesGericht.zubereitungszeit, gerichtN1.zubereitungszeit)
@@ -63,12 +56,13 @@ class GerichteVerwalterTest {
         EasyMock.verify(verwalter)
     }
 
+
     @Test
     fun holeAlleGerichte(){
         EasyMock.expect(verwalter.holeAlle()).andReturn(alleGerichte)
         EasyMock.replay(verwalter)
 
-        val geholteAlleGerichte = this.verwalter.holeAlle()
+        val geholteAlleGerichte = this.gerichteVerwalter.holeAlle()
         for(geholtesGericht in geholteAlleGerichte){
             val gesuchtesGericht = alleGerichte.first { it.id == geholtesGericht.id }
             Assertions.assertEquals(geholtesGericht.id,  gesuchtesGericht.id)
@@ -104,6 +98,7 @@ class GerichteVerwalterTest {
         EasyMock.verify(verwalter)
     }
 
+
     @Test
     fun aendereGericht(){
         EasyMock.expect(verwalter.aendere(gerichtN2, gerichtN1.id)).andReturn(gerichtN2)
@@ -133,8 +128,9 @@ class GerichteVerwalterTest {
         EasyMock.verify(verwalter)
     }
 
+
     @Test
-    fun loescheGerichtMisserfolg(){
+    fun loescheGerichtNichtErfolgreich(){
         EasyMock.expect(verwalter.loesche(gerichtN1.id)).andReturn(false)
         EasyMock.replay(verwalter)
 
