@@ -286,9 +286,10 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
         this.isVisible = true
     }
 
-    override fun aktualisiere(o: Any?) {
-        val alleGerichte = this.gerichteRegler.holeAlle() as ArrayList<Gericht>
-        aktualisiereElementListe(alleGerichte)
+    override fun aktualisiere(gerichte: List<Gericht>?) {
+        if (gerichte != null) {
+            aktualisiereElementListe(gerichte)
+        }
     }
 
     private fun aktualisiereElementListe(gerichtList: List<Gericht>){

@@ -1,5 +1,7 @@
 package cookbook.adapter.beobachter.muster
 
+import cookbook.kern.Gericht
+
 interface Observer {
-    fun aktualisiere(o: Any?)
+    fun aktualisiere(gerichte: List<Gericht>?)
 }
