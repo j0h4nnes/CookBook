@@ -47,26 +47,17 @@ class GerichteUebersicht(gerichteRegler: GerichtRegler) : Observer, JFrame() {
         this.gerichteRegler = gerichteRegler
         this.gerichteRegler.meldeAn(this)
 
-        // Erstelle die Element-Liste
         erstelleElementListe(gerichteRegler)
-
-        // Gibt erstes Element an
         setzeInitialesGericht()
 
         // Erstelle das Haupt-Panel
         val panel = JPanel()
         panel.layout = BorderLayout()
 
-        // Erstelle die Such- und Filterleiste
         val suchUndFilterleiste = erstelleSuchUndFilterleiste(gerichteRegler)
 
-        // Erstelle das Element-List-Panel
         erstelleElementListPanel(panel)
-
-        // Erstelle das Detail-Panel
         val detailPanel = erstelleDetailPanel()
-
-        // Erstelle Gerichte Optionen
         val gerichteOptionen = erstelleGerichteOptionen(gerichteRegler)
 
         panel.add(suchUndFilterleiste, BorderLayout.NORTH)
