@@ -8,7 +8,6 @@ import java.nio.file.Paths
 import kotlin.io.path.deleteIfExists
 import cookbook.kern.Gericht
 
-// Zugriff auf die JSON Files in eigener Klasse (fun hole, fun schreibe, fun lösche)
 class JSONEntityController : EntityController {
     private val objectMapper = ObjectMapper()
     private var listeMitAllenGerichten: MutableList<Gericht> = ArrayList()
@@ -67,5 +66,4 @@ class JSONEntityController : EntityController {
     override fun hole(id: Int): Gericht {
         return listeMitAllenGerichten.first{ it.id == id}
     }
-
 }
