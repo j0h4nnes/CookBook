@@ -25,9 +25,4 @@ enum class Einheit {
     Würfel,
     Tropfen;
 
-    companion object {
-        fun fromString(einheit: String): Einheit {
-            return values().first { it.name.equals(einheit, ignoreCase = true) }
-        }
-    }
 }
