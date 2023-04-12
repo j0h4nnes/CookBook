@@ -5,7 +5,7 @@ import cookbook.adapter.beobachter.muster.Subjekt
 import cookbook.applikation.GerichteVerwalter
 import cookbook.kern.Gericht
 
-class GerichtRegler : Subjekt {
+open class GerichtRegler : Subjekt {
 
     private var verwaltung: GerichteVerwalter? = null
     private var observer: MutableList<Observer>? = null

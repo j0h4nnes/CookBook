@@ -2,7 +2,7 @@ package cookbook.applikation
 
 import cookbook.kern.Gericht
 
-class GerichteVerwalter {
+open class GerichteVerwalter {
     private var verwalter: EntityController
 
     constructor(verwalter: EntityController) {

@@ -6,6 +6,7 @@ import java.awt.BorderLayout
 import java.awt.Font
 import java.awt.GridLayout
 import java.awt.event.ActionListener
+import java.lang.Exception
 import javax.swing.*
 import javax.swing.border.EmptyBorder
 
@@ -26,14 +27,14 @@ class Formular : JFrame {
     private val pnlZutaten: JPanel = JPanel()
     private val pnlZubereitung: JPanel = JPanel()
 
-    private var tfRezeptname: JTextField = JTextField()
-    private var tfZubereitungszeit: JTextField = JTextField()
-    private var tfZeiteinheit: JComboBox<Zeiteinheit> = JComboBox()
-    private var tfSchwierigkeitsgrad: JComboBox<Schwierigkeitsgrad> = JComboBox()
-    private var tfPortion: JTextField = JTextField()
-    private var tfKcal: JTextField = JTextField()
-    private var lsZutaten: List<Zutat> = emptyList()
-    private var taZubereitung: JTextArea = JTextArea()
+    var tfRezeptname: JTextField = JTextField()
+    var tfZubereitungszeit: JTextField = JTextField()
+    var tfZeiteinheit: JComboBox<Zeiteinheit> = JComboBox()
+    var tfSchwierigkeitsgrad: JComboBox<Schwierigkeitsgrad> = JComboBox()
+    var tfPortion: JTextField = JTextField()
+    var tfKcal: JTextField = JTextField()
+    var lsZutaten: List<Zutat> = emptyList()
+    var taZubereitung: JTextArea = JTextArea()
 
     private var rezept = JLabel("Rezepterstellung")
 
@@ -46,7 +47,7 @@ class Formular : JFrame {
     private var zutaten = JLabel("Zutaten")
     private var zubereitung = JLabel("Zubereitung")
 
-    private var bildPath = "noPicture.png"
+    var bildPfad = "noPicture.png"
 
     private var gerichtRegler: GerichtRegler
     private var updateGericht: Gericht? = null
@@ -61,26 +62,31 @@ class Formular : JFrame {
         btnSpeichern.font = Font("Arial", Font.PLAIN, 20)
 
         btnSpeichern.addActionListener(ActionListener {
-            if (this.tfRezeptname.text.isEmpty() || this.tfZubereitungszeit.text.isEmpty()
-                || this.tfZeiteinheit.selectedIndex == -1 || this.tfSchwierigkeitsgrad.selectedIndex == -1 || this.tfPortion.text.isEmpty()
-                || this.tfKcal.text.isEmpty() || this.taZubereitung.text.isEmpty()) //|| this.bilderAuswahl.size <= 0)
-            {
-                JOptionPane.showMessageDialog(this, "Bitte alle Felder ausfüllen.")
-                return@ActionListener }
+            if (!pruefeEingabenZuGericht(this.tfRezeptname.text,
+                    this.tfZubereitungszeit.text, this.tfZeiteinheit.selectedIndex,
+                    this.tfSchwierigkeitsgrad.selectedIndex, this.tfPortion.text,
+                    this.tfKcal.text, this.lsZutaten, this.taZubereitung.text)){
+                JOptionPane.showMessageDialog(this, "Bitte alle Felder ausfüllen!\r\n"+
+                        "Tipp: Die Felder Zubereitungszeit, Portion und Kcal müssen Zahlenwerte enthalten.\r\n"+
+                        "Es muss eine Zutat hinzugefügt worden sein!")
+                return@ActionListener
+            }
 
-            if(this.lsZutaten.isEmpty()){ JOptionPane.showMessageDialog(this, "Bitte Zutaten hinzufügen!")
-                return@ActionListener}
-
-            if(updateGericht != null) {
+            if (updateGericht != null) {
                 gerichtRegler.loescheGericht(updateGericht!!.id)
             }
 
-            val gericht = Gericht(this.tfRezeptname.text, Zubereitungszeit(this.tfZubereitungszeit.text.toInt(),
-                this.tfZeiteinheit.getItemAt(this.tfZeiteinheit.selectedIndex)),
-                this.tfSchwierigkeitsgrad.getItemAt(this.tfSchwierigkeitsgrad.selectedIndex),this.tfPortion.text.toInt(),
-                this.tfKcal.text.toInt(), this.lsZutaten,this.taZubereitung.text, this.bildPath)
+            val gericht = Gericht(
+                this.tfRezeptname.text, Zubereitungszeit(
+                    this.tfZubereitungszeit.text.toInt(),
+                    this.tfZeiteinheit.getItemAt(this.tfZeiteinheit.selectedIndex)
+                ),
+                this.tfSchwierigkeitsgrad.getItemAt(this.tfSchwierigkeitsgrad.selectedIndex), this.tfPortion.text.toInt(),
+                this.tfKcal.text.toInt(), this.lsZutaten, this.taZubereitung.text, this.bildPfad
+            )
 
-            val erstelltesGericht: Gericht? = this.gerichtRegler.erstelleGericht(gericht)
+            val erstelltesGericht = erstelleGerichtJSON(gericht)
+
             if (erstelltesGericht != null) {
                 JOptionPane.showMessageDialog(this, erstelltesGericht.rezept + " wurde erfolgreich erstellt.")
                 this.gerichtRegler.benachrichtige()
@@ -106,7 +112,7 @@ class Formular : JFrame {
             if (result == JFileChooser.APPROVE_OPTION) {
                 val file = chooser.selectedFile
                 println("Selected file: ${file.name}")
-                bildPath = file.absolutePath
+                bildPfad = file.absolutePath
             }
         }
 
@@ -209,6 +215,30 @@ class Formular : JFrame {
         this.isVisible = true
     }
 
+    fun pruefeEingabenZuGericht(rezept:String, dauer:String, zeiteinheit:Int, schwierigkeitsgrad:Int, portionen:String, kcal:String,
+                                        zutaten:List<Zutat>, zubereitung:String): Boolean {
+        val dauerInt:Int
+        val portionenInt:Int
+        val kcalInt:Int
+        try {
+            dauerInt = dauer.toInt()
+            portionenInt = portionen.toInt()
+            kcalInt = kcal.toInt()
+        }catch (e:Exception){
+            return false
+        }
+        if (rezept.isEmpty() || dauerInt < 0 || zeiteinheit == -1 || schwierigkeitsgrad == -1 || portionenInt < 0
+            || kcalInt < 0 || zutaten.isEmpty() || zubereitung.isEmpty()) {
+            return false
+        }
+        return true
+    }
+
+    fun erstelleGerichtJSON(gericht: Gericht):Gericht? {
+        val erstelltesGericht: Gericht? = this.gerichtRegler.erstelleGericht(gericht)
+        return erstelltesGericht
+    }
+
     fun getListZutaten():List<Zutat>{
         return lsZutaten
     }
@@ -224,7 +254,7 @@ class Formular : JFrame {
         this.tfKcal.text = gericht.kcal.toString()
         this.lsZutaten = gericht.zutaten
         this.taZubereitung.text = gericht.zubereitung
-        this.bildPath = gericht.bildPfad
+        this.bildPfad = gericht.bildPfad
 
         this.repaint()
     }
